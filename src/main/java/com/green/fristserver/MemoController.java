@@ -3,6 +3,7 @@ package com.green.fristserver;
 import com.green.fristserver.model.MemoGetOnRes;
 import com.green.fristserver.model.MemoGetRes;
 import com.green.fristserver.model.MemoPostReq;
+import com.green.fristserver.model.MemoPutReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,4 +38,17 @@ public class MemoController {
         int result = memoService.insMemo(req);
         return result == 1 ?"성공" : "실패";
     }
+    @PutMapping("/memo")
+    public String putMemo( @RequestBody MemoPutReq req) {
+        System.out.println("putMemo: " + req);
+        int result = memoService.updMemo(req);
+        return result == 1 ? "성공" : "실패";
+    }
+    @DeleteMapping("/memo")
+    public String deleteMemo(@RequestParam int id) { // 인트로 안 받고 객체로 받는다.
+        System.out.println("deleteMemo: " + id);
+        int result = memoService.delMemo(id);
+        return result == 1 ? "성공" : "실패";
+    }
+
 }

@@ -3,6 +3,7 @@ package com.green.fristserver;
 import com.green.fristserver.model.MemoGetOnRes;
 import com.green.fristserver.model.MemoGetRes;
 import com.green.fristserver.model.MemoPostReq;
+import com.green.fristserver.model.MemoPutReq;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.ArrayList;
@@ -17,4 +18,6 @@ public interface MemoMapper {
     int insMemo(MemoPostReq req);
     List<MemoGetRes> selMemoList();
     MemoGetOnRes selMemo (int id);
+    int updMemo(MemoPutReq req);
+    int delMemo(int id);
 }

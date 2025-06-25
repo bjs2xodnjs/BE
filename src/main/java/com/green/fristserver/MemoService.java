@@ -3,6 +3,7 @@ package com.green.fristserver;
 import com.green.fristserver.model.MemoGetOnRes;
 import com.green.fristserver.model.MemoGetRes;
 import com.green.fristserver.model.MemoPostReq;
+import com.green.fristserver.model.MemoPutReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +25,11 @@ public class MemoService {
     }
     public MemoGetOnRes selMemo(int id) {
         return memoMapper.selMemo(id);
+    }
+    public int updMemo(MemoPutReq req) {
+        return memoMapper.updMemo(req);
+    }
+    public int delMemo(int id) {
+        return memoMapper.delMemo(id);
     }
 }
